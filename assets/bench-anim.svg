@@ -1,0 +1,93 @@
+<svg class="hero-scene__bench" viewBox="0 0 800 420" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d4a574"/>
+      <stop offset="100%" stop-color="#8b5e3c"/>
+    </linearGradient>
+    <linearGradient id="shirt" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3d3d3d"/>
+      <stop offset="100%" stop-color="#1f1f1f"/>
+    </linearGradient>
+    <linearGradient id="barMetal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f0f0f0"/>
+      <stop offset="100%" stop-color="#b8b8b8"/>
+    </linearGradient>
+    <linearGradient id="plate" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#444"/>
+      <stop offset="100%" stop-color="#1a1a1a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- stage shadow -->
+  <ellipse cx="400" cy="368" rx="240" ry="20" fill="#000" opacity="0.35"/>
+
+  <!-- rack (behind) -->
+  <g class="rack">
+    <rect x="118" y="24" width="12" height="250" rx="3" fill="#3f3f3f"/>
+    <rect x="670" y="24" width="12" height="250" rx="3" fill="#3f3f3f"/>
+    <rect x="100" y="14" width="600" height="8" rx="3" fill="#5a5a5a"/>
+    <rect x="100" y="264" width="600" height="8" rx="3" fill="#5a5a5a"/>
+    <rect x="108" y="108" width="584" height="6" rx="2" fill="#666" opacity="0.5"/>
+  </g>
+
+  <!-- bench -->
+  <g class="bench">
+    <rect x="248" y="268" width="304" height="16" rx="5" fill="#2e2e2e"/>
+    <rect x="264" y="284" width="272" height="10" rx="4" fill="#222"/>
+    <rect x="228" y="232" width="10" height="68" rx="3" fill="#4a4a4a"/>
+    <rect x="562" y="232" width="10" height="68" rx="3" fill="#4a4a4a"/>
+  </g>
+
+  <!-- legs -->
+  <g class="legs">
+    <path d="M310 284 Q330 310 318 340" stroke="#8b5e3c" stroke-width="14" stroke-linecap="round" fill="none"/>
+    <path d="M490 284 Q470 310 482 340" stroke="#8b5e3c" stroke-width="14" stroke-linecap="round" fill="none"/>
+    <ellipse cx="318" cy="342" rx="16" ry="8" fill="#222"/>
+    <ellipse cx="482" cy="342" rx="16" ry="8" fill="#222"/>
+  </g>
+
+  <!-- torso + head (on bench) -->
+  <g class="lifter-base">
+    <ellipse cx="400" cy="198" rx="30" ry="34" fill="url(#skin)"/>
+    <rect x="352" y="228" width="96" height="44" rx="18" fill="url(#shirt)"/>
+    <path d="M352 248 Q400 262 448 248" stroke="#555" stroke-width="2" fill="none" opacity="0.4"/>
+  </g>
+
+  <!-- animated lift -->
+  <g class="lift-cycle">
+    <!-- upper arms -->
+    <g class="arm-upper arm-upper--l">
+      <path d="M352 248 L318 168" stroke="url(#skin)" stroke-width="16" stroke-linecap="round"/>
+    </g>
+    <g class="arm-upper arm-upper--r">
+      <path d="M448 248 L482 168" stroke="url(#skin)" stroke-width="16" stroke-linecap="round"/>
+    </g>
+
+    <!-- forearms + bar -->
+    <g class="lift-bar-group">
+      <g class="arm-fore arm-fore--l">
+        <path d="M318 168 L298 118" stroke="url(#skin)" stroke-width="14" stroke-linecap="round"/>
+      </g>
+      <g class="arm-fore arm-fore--r">
+        <path d="M482 168 L502 118" stroke="url(#skin)" stroke-width="14" stroke-linecap="round"/>
+      </g>
+
+      <g class="barbell">
+        <rect x="140" y="108" width="520" height="8" rx="4" fill="url(#barMetal)"/>
+        <g fill="url(#plate)" stroke="#777" stroke-width="2">
+          <circle cx="128" cy="112" r="26"/>
+          <circle cx="672" cy="112" r="26"/>
+        </g>
+        <rect x="98" y="92" width="22" height="40" rx="3" fill="#333"/>
+        <rect x="680" y="92" width="22" height="40" rx="3" fill="#333"/>
+        <!-- knurl marks -->
+        <g stroke="#999" stroke-width="1" opacity="0.5">
+          <line x1="200" y1="106" x2="200" y2="118"/><line x1="220" y1="106" x2="220" y2="118"/>
+          <line x1="580" y1="106" x2="580" y2="118"/><line x1="600" y1="106" x2="600" y2="118"/>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <ellipse class="press-spot" cx="400" cy="112" rx="200" ry="32" fill="#ff9f5a" opacity="0.12"/>
+</svg>

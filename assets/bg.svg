@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" fill="none">
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a2816"/>
+      <stop offset="55%" stop-color="#32180c"/>
+      <stop offset="100%" stop-color="#1a0c06"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5c3820"/>
+      <stop offset="100%" stop-color="#180a04"/>
+    </linearGradient>
+    <radialGradient id="spot" cx="50%" cy="46%" r="38%">
+      <stop offset="0%" stop-color="#ff9f5a" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#ff9f5a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vig" cx="50%" cy="42%" r="78%">
+      <stop offset="40%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="#0a0503"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#wall)"/>
+  <rect width="1920" height="1080" fill="url(#spot)"/>
+
+  <g opacity="0.08">
+    <rect x="0" y="100" width="1920" height="48" fill="#c4784a"/>
+    <rect x="0" y="240" width="1920" height="48" fill="#b86a3e"/>
+  </g>
+
+  <path d="M0 760 L1920 760 L1920 1080 L0 1080Z" fill="url(#floor)"/>
+  <path d="M0 760 L960 820 L1920 760" stroke="#8a5530" stroke-width="2" opacity="0.25"/>
+
+  <path d="M60 90 Q960 150 1860 90" stroke="#5c3820" stroke-width="2" fill="none" opacity="0.35"/>
+  <g fill="#ffcc80" opacity="0.75">
+    <circle cx="200" cy="112" r="4"/><circle cx="480" cy="132" r="4"/>
+    <circle cx="760" cy="142" r="5"/><circle cx="1040" cy="146" r="5"/>
+    <circle cx="1320" cy="142" r="4"/><circle cx="1600" cy="132" r="4"/>
+  </g>
+
+  <rect width="1920" height="1080" fill="url(#vig)"/>
+</svg>

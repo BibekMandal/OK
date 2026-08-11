@@ -1,0 +1,13 @@
+<svg width="930" height="280" viewBox="0 0 930 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff5555"/>
+      <stop offset="50%" stop-color="#e50914"/>
+      <stop offset="100%" stop-color="#b91c1c"/>
+    </linearGradient>
+  </defs>
+  <text x="465" y="175" text-anchor="middle" font-family="Impact, system-ui, sans-serif" font-weight="900" font-size="108" letter-spacing="0.04em">
+    <tspan fill="#0a0a0a" stroke="#ffffff" stroke-width="3" paint-order="stroke">DESI </tspan>
+    <tspan fill="url(#redGrad)">अखाड़ा</tspan>
+  </text>
+</svg>
