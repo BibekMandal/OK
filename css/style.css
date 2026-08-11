@@ -5,6 +5,8 @@
 html {
   height: 100%;
   -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -13,6 +15,8 @@ body {
   color: #ededed;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
   overflow: hidden;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .hidden { display: none !important; }
@@ -20,11 +24,14 @@ body {
 .page {
   position: relative;
   display: grid;
+  min-height: 100vh;
   min-height: 100dvh;
   grid-template-rows: auto minmax(0, 1fr) auto auto;
   align-items: center;
   justify-items: center;
   overflow: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 .hero-bg {
@@ -66,12 +73,15 @@ body {
   font-weight: 500;
   color: #fff;
   filter: drop-shadow(0 1px 6px rgba(0, 0, 0, 0.5));
+  max-width: calc(100vw - 2.5rem);
+  white-space: nowrap;
 }
 
 .online-badge__dot {
   position: relative;
   width: 0.625rem;
   height: 0.625rem;
+  flex-shrink: 0;
 }
 
 .online-badge__ping {
@@ -120,6 +130,7 @@ body {
   text-decoration: none;
   filter: drop-shadow(0 1px 6px rgba(0, 0, 0, 0.5));
   transition: opacity 0.15s, transform 0.15s;
+  flex-shrink: 0;
 }
 
 .social-pill:hover { opacity: 0.8; }
@@ -140,6 +151,8 @@ body {
   z-index: 10;
   padding: 6.5vh 1.25rem 0.25rem;
   text-align: center;
+  width: 100%;
+  max-width: 100vw;
 }
 
 .brand {
@@ -147,6 +160,8 @@ body {
   justify-content: center;
   line-height: 1;
   user-select: none;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .brand__line {
@@ -154,12 +169,15 @@ body {
   align-items: baseline;
   gap: 0.28em;
   padding: 0.15em 0.35em;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
 }
 
 .brand__desi {
   font-family: "Anton", "Bebas Neue", Impact, sans-serif;
   font-weight: 400;
-  font-size: clamp(3rem, 13vw, 6.5rem);
+  font-size: clamp(2.4rem, 13vw, 6.5rem);
   letter-spacing: 0.04em;
   color: #0a0a0a;
   -webkit-text-stroke: 2px rgba(255, 255, 255, 0.92);
@@ -174,7 +192,7 @@ body {
   position: relative;
   font-family: "Noto Sans Devanagari", system-ui, sans-serif;
   font-weight: 900;
-  font-size: clamp(2.85rem, 12vw, 6rem);
+  font-size: clamp(2.3rem, 12vw, 6rem);
   letter-spacing: -0.03em;
   background: linear-gradient(165deg, #ff5555 0%, #e50914 38%, #b91c1c 72%, #7f0d0d 100%);
   -webkit-background-clip: text;
@@ -216,6 +234,7 @@ body {
   width: 100%;
   padding: 0.5rem 1rem 0;
   pointer-events: none;
+  max-width: 100vw;
 }
 
 .hero-scene__stage {
@@ -280,7 +299,7 @@ body {
   margin: 0;
   padding: 0 0.25rem;
   font-family: "Rajdhani", "Noto Sans Devanagari", system-ui, sans-serif;
-  font-size: clamp(1rem, 3.8vw, 1.2rem);
+  font-size: clamp(0.9rem, 3.8vw, 1.2rem);
   font-weight: 600;
   line-height: 1.45;
   letter-spacing: 0.01em;
@@ -290,6 +309,7 @@ body {
   align-items: center;
   justify-content: center;
   transition: opacity 0.2s ease, transform 0.2s ease;
+  word-break: break-word;
 }
 
 .motivation__quote.is-changing {
@@ -363,6 +383,7 @@ body {
   width: 100%;
   max-width: 36rem;
   padding: 0.85rem 1.5rem 4.5vh;
+  box-sizing: border-box;
 }
 
 .player {
@@ -378,6 +399,8 @@ body {
   box-shadow:
     0 8px 40px rgba(0, 0, 0, 0.5),
     inset 0 1px 0 rgba(255, 255, 255, 0.28);
+  width: 100%;
+  max-width: 100%;
 }
 
 .player__art {
@@ -542,6 +565,8 @@ body {
     radial-gradient(ellipse 90% 55% at 50% 18%, rgba(229, 9, 20, 0.14) 0%, transparent 55%),
     #0a0a0a;
   transition: opacity 0.55s ease, visibility 0.55s;
+  width: 100%;
+  height: 100%;
 }
 
 .loader.is-gone {
@@ -561,10 +586,12 @@ body {
   align-items: baseline;
   gap: 0.28em;
   font-family: "Anton", Impact, sans-serif;
-  font-size: clamp(2.75rem, 12vw, 5.5rem);
+  font-size: clamp(2.2rem, 12vw, 5.5rem);
   line-height: 1;
   letter-spacing: 0.04em;
   margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .loader__desi {
@@ -579,7 +606,7 @@ body {
 .loader__hi {
   font-family: "Noto Sans Devanagari", sans-serif;
   font-weight: 900;
-  font-size: clamp(2.6rem, 11vw, 5.2rem);
+  font-size: clamp(2.1rem, 11vw, 5.2rem);
   background: linear-gradient(165deg, #ff5555 0%, #e50914 45%, #b91c1c 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -589,7 +616,7 @@ body {
 
 .loader__hint {
   font-family: "Rajdhani", system-ui, sans-serif;
-  font-size: clamp(0.8rem, 2.8vw, 0.95rem);
+  font-size: clamp(0.75rem, 2.8vw, 0.95rem);
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -602,6 +629,7 @@ body {
   width: 100%;
   min-height: 48vh;
   margin-top: clamp(0.75rem, 3vh, 2rem);
+  overflow: hidden;
 }
 
 .loader__road {
@@ -773,13 +801,160 @@ body {
   pointer-events: none;
 }
 
+/* ================= RESPONSIVE ADDITIONS (no design changes) ================= */
+
+/* Tablets / small laptops */
+@media (max-width: 900px) {
+  .hero-scene__stage { width: min(90vw, 32rem); }
+  .player-wrap { max-width: 32rem; }
+}
+
+/* Large phones (landscape-ish / big phones) */
+@media (max-width: 640px) {
+  .online-badge {
+    top: 0.85rem;
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem 0.3rem 0.6rem;
+  }
+
+  .social-links {
+    top: 0.85rem;
+    right: 0.85rem;
+    gap: 0.4rem;
+  }
+
+  .social-pill { padding: 0.5rem; }
+
+  .hero { padding: 5.5vh 0.9rem 0.2rem; }
+
+  .hero-scene__stage { width: min(94vw, 28rem); }
+
+  .motivation { width: min(94vw, 30rem); padding: 0.75rem 0.85rem 0.6rem; }
+
+  .player-wrap { padding: 0.75rem 1rem 4vh; }
+
+  .player { gap: 0.75rem; padding: 0.65rem 1rem 0.65rem 0.65rem; }
+}
+
+/* Standard phones */
 @media (max-width: 480px) {
+  html, body { overflow-x: hidden; }
+
+  .page { grid-template-rows: auto minmax(0, 1fr) auto auto; }
+
+  .online-badge {
+    top: 0.65rem;
+    font-size: 0.75rem;
+    gap: 0.35rem;
+    padding: 0.3rem 0.7rem 0.3rem 0.55rem;
+    max-width: calc(100vw - 1.5rem);
+  }
+
+  .online-badge__dot,
+  .online-badge__ping,
+  .online-badge__core { width: 0.5rem; height: 0.5rem; }
+
+  .social-links { top: 0.65rem; right: 0.65rem; gap: 0.35rem; }
+  .social-pill { padding: 0.45rem; }
+  .social-pill svg { width: 16px; height: 16px; }
+
   .hero { padding-top: 5.5vh; }
   .brand__line { gap: 0.18em; }
+
   .motivation { padding: 0.7rem 0.75rem 0.55rem; }
   .motivation__quote { min-height: 3.2em; font-size: 0.95rem; }
+  .motivation__refresh { font-size: 0.72rem; padding: 0.32rem 0.75rem; }
+
+  .hero-scene { padding: 0.4rem 0.6rem 0; }
   .hero-scene__stage { width: min(96vw, 24rem); }
-  .player__art { width: 4rem; height: 4rem; }
-  .player { gap: 0.75rem; padding-right: 0.75rem; }
+  .hero-scene__canvas { max-height: min(34vh, 220px); }
+
+  .player-wrap { padding: 0.7rem 1rem 4.5vh; }
+  .player { gap: 0.6rem; padding: 0.6rem 0.9rem 0.6rem 0.6rem; }
+  .player__art { width: 3.75rem; height: 3.75rem; }
   .player__title { font-size: 0.8125rem; }
+  .player__artist { font-size: 0.75rem; }
+  .player__btn { width: 2rem; height: 2rem; }
+  .player__btn--main { width: 2.5rem; height: 2.5rem; }
+}
+
+/* Very small / narrow phones (e.g. SE, small Androids) */
+@media (max-width: 360px) {
+  .online-badge {
+    font-size: 0.68rem;
+    padding: 0.25rem 0.6rem 0.25rem 0.5rem;
+  }
+
+  .social-pill { padding: 0.4rem; }
+  .social-pill svg { width: 15px; height: 15px; }
+
+  .brand__desi { font-size: clamp(2rem, 14vw, 5.5rem); }
+  .brand__aakhada { font-size: clamp(1.95rem, 13vw, 5rem); }
+
+  .hero-scene__stage { width: min(97vw, 20rem); }
+
+  .motivation__quote { font-size: 0.88rem; min-height: 3.4em; }
+
+  .player-wrap { padding: 0.6rem 0.75rem 4vh; }
+  .player { gap: 0.5rem; padding: 0.55rem 0.75rem 0.55rem 0.55rem; flex-wrap: nowrap; }
+  .player__art { width: 3.25rem; height: 3.25rem; }
+  .player__title { font-size: 0.75rem; }
+  .player__artist { font-size: 0.6875rem; }
+  .player__time { font-size: 0.625rem; }
+  .player__btn { width: 1.85rem; height: 1.85rem; }
+  .player__btn--main { width: 2.25rem; height: 2.25rem; }
+  .player__controls { gap: 0.1rem; }
+}
+
+/* Short-height screens (small phones in landscape, or short viewports) */
+@media (max-height: 700px) {
+  .hero { padding-top: 4vh; padding-bottom: 0.15rem; }
+  .hero-scene__canvas { max-height: min(30vh, 200px); }
+  .motivation { margin-top: 0.25rem; padding: 0.6rem 0.85rem 0.5rem; }
+  .motivation__quote { min-height: 2.5em; }
+  .player-wrap { padding-bottom: 3vh; }
+}
+
+@media (max-height: 560px) {
+  .hero { padding-top: 3vh; }
+  .hero-scene__canvas { max-height: min(24vh, 160px); }
+  .motivation { display: none; }
+  .player-wrap { padding: 0.6rem 1rem 2.5vh; }
+}
+
+/* Phone landscape orientation specifically */
+@media (max-width: 900px) and (orientation: landscape) and (max-height: 500px) {
+  .page { grid-template-rows: auto minmax(0, 1fr) auto; }
+  .hero { padding: 2vh 1rem 0.15rem; }
+  .brand__desi { font-size: clamp(1.6rem, 8vw, 3rem); }
+  .brand__aakhada { font-size: clamp(1.55rem, 7.5vw, 2.8rem); }
+  .hero-scene__stage { width: min(50vw, 18rem); }
+  .hero-scene__canvas { max-height: min(26vh, 150px); }
+  .motivation { display: none; }
+  .player-wrap { padding: 0.5rem 1rem 1.5vh; max-width: 30rem; }
+  .player { padding: 0.5rem 0.9rem 0.5rem 0.5rem; }
+  .player__art { width: 3rem; height: 3rem; }
+}
+
+/* Loader responsive additions */
+@media (max-width: 480px) {
+  .loader__top { padding: clamp(2.5rem, 10vh, 5rem) 1rem 0; }
+  .loader__brand { gap: 0.2em; }
+  .loader__hint { letter-spacing: 0.1em; }
+}
+
+@media (max-width: 360px) {
+  .loader__desi,
+  .loader__hi { font-size: clamp(1.9rem, 13vw, 4.5rem); }
+}
+
+@media (max-height: 600px) {
+  .loader__top { padding-top: clamp(1.75rem, 6vh, 3rem); }
+  .loader__scene { min-height: 38vh; margin-top: 0.75rem; }
+}
+
+/* Ensure nothing ever causes horizontal scroll on any phone width */
+@media (max-width: 480px) {
+  * { max-width: 100%; }
+  img, svg, video, canvas { max-width: 100%; }
 }
